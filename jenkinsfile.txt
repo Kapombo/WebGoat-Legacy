@@ -1,5 +1,10 @@
 node {
-	stage ('\u2778 CX') {
+	stage ('Git SCM') {
+
+		git 'https://github.com/Kapombo/WebGoat-Legacy.git'
+
+	}
+	stage ('CX Scan') {
 		step([$class: 'CxScanBuilder', avoidDuplicateProjectScans: true, comment: '', credentialsId: '', excludeFolders: 'node_modules,test,target,build', excludeOpenSourceFolders: 'node_modules,test,target,build', exclusionsSetting: 'global', failBuildOnNewResults: false, failBuildOnNewSeverity: 'HIGH', filterPattern: '''!**/_cvs/**/*, !**/.svn/**/*,   !**/.hg/**/*,   !**/.git/**/*,  !**/.bzr/**/*, !**/bin/**/*,
 !**/obj/**/*,  !**/backup/**/*, !**/.idea/**/*, !**/*.DS_Store, !**/*.ipr,     !**/*.iws,
 !**/*.bak,     !**/*.tmp,       !**/*.aac,      !**/*.aif,      !**/*.iff,     !**/*.m3u, !**/*.mid, !**/*.mp3,
