@@ -25,6 +25,7 @@ node {
                         error 'Checkmarx is unstable'
                         }
                         //currentBuild.result = 'SUCCESS'
+		}
 	}
 	    stage("After pipeline") {
             echo 'hello'
