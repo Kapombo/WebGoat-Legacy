@@ -57,6 +57,7 @@ import org.owasp.webgoat.util.HtmlEncoder;
  * For details, please see http://webgoat.github.io
  * 
  */
+*/
 public class CrossSiteScripting extends GoatHillsFinancial
 {
     private final static Integer DEFAULT_RANKING = new Integer(100);
