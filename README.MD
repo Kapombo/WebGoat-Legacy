@@ -36,7 +36,7 @@ You can find more information about WebGoat at:
 
 Follow these instructions if you simply wish to run WebGoat
 
-**Prerequisites:** 
+**Prerequisites:****
 
 Java VM >= 1.6 installed ( JDK 1.7 recommended)
 
