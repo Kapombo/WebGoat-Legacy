@@ -6,7 +6,7 @@ node {
 	}
 	stage ('CX Scan') {
 		//try {
-			step([$class: 'CxScanBuilder', avoidDuplicateProjectScans: true, comment: '', credentialsId: '6671b964-005a-489c-b4c5-18919e404ce1', excludeFolders: 'node_modules,test,target,build', exclusionsSetting: 'job', failBuildOnNewResults: false, failBuildOnNewSeverity: 'HIGH', filterPattern: '''!**/_cvs/**/*, !**/.svn/**/*,   !**/.hg/**/*,   !**/.git/**/*,  !**/.bzr/**/*, !**/bin/**/*,
+			step([$class: 'CxScanBuilder', avoidDuplicateProjectScans: true, comment: '', credentialsId: 'ced6538b-2a32-4e80-9f82-28e8ee491bd5', excludeFolders: 'node_modules,test,target,build', exclusionsSetting: 'job', failBuildOnNewResults: false, failBuildOnNewSeverity: 'HIGH', filterPattern: '''!**/_cvs/**/*, !**/.svn/**/*,   !**/.hg/**/*,   !**/.git/**/*,  !**/.bzr/**/*, !**/bin/**/*,
 !**/obj/**/*,  !**/backup/**/*, !**/.idea/**/*, !**/*.DS_Store, !**/*.ipr,     !**/*.iws,
 !**/*.bak,     !**/*.tmp,       !**/*.aac,      !**/*.aif,      !**/*.iff,     !**/*.m3u, !**/*.mid, !**/*.mp3,
 !**/*.mpa,     !**/*.ra,        !**/*.wav,      !**/*.wma,      !**/*.3g2,     !**/*.3gp, !**/*.asf, !**/*.asx,
@@ -32,5 +32,3 @@ node {
             echo 'hello'
         }
 }// node
-
-
