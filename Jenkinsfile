@@ -5,7 +5,7 @@ node {
 
 	}
 	stage ('CX Scan') {
-		//try {
+		try {
 			step([$class: 'CxScanBuilder', avoidDuplicateProjectScans: true, comment: '', credentialsId: 'ced6538b-2a32-4e80-9f82-28e8ee491bd5', excludeFolders: 'node_modules,test,target,build', exclusionsSetting: 'job', failBuildOnNewResults: false, failBuildOnNewSeverity: 'HIGH', filterPattern: '''!**/_cvs/**/*, !**/.svn/**/*,   !**/.hg/**/*,   !**/.git/**/*,  !**/.bzr/**/*, !**/bin/**/*,
 !**/obj/**/*,  !**/backup/**/*, !**/.idea/**/*, !**/*.DS_Store, !**/*.ipr,     !**/*.iws,
 !**/*.bak,     !**/*.tmp,       !**/*.aac,      !**/*.aif,      !**/*.iff,     !**/*.m3u, !**/*.mid, !**/*.mp3,
@@ -17,16 +17,16 @@ node {
 !**/*.hdml,    !**/*.hsql,      !**/*.ht,       !**/*.hta,      !**/*.htc,     !**/*.htd, !**/*.war, !**/*.ear,
 !**/*.htmls,   !**/*.ihtml,     !**/*.mht,      !**/*.mhtm,     !**/*.mhtml,   !**/*.ssi, !**/*.stm,
 !**/*.stml,    !**/*.ttml,      !**/*.txn,      !**/*.xhtm,     !**/*.xhtml,   !**/*.class, !**/*.iml, !Checkmarx/Reports/*.*''', fullScanCycle: 10, groupId: 'dae92368-7794-4824-8375-dc04fcac4103', hideDebugLogs: true, highThreshold: 0, isProxy: false, jobStatusOnError: 'FAILURE', lowThreshold: 0, mediumThreshold: 0, password: '{AQAAABAAAAAQ4gCUHuusrAo9Eyg1c2VB4CXmMjzUNCxAn+GbWSWKTmI=}', preset: '36', projectName: 'Webgoat_java_Pipeline', sastEnabled: true, serverUrl: 'https://cxmanager.cx.local', sourceEncoding: '1', useOwnServerCredentials: true, username: '', vulnerabilityThresholdEnabled: true, vulnerabilityThresholdResult: 'FAILURE', waitForResultsEnabled: true])
-		//}
-		//catch (Exception e) {
+		}
+		catch (Exception e) {
 		
-                        //echo 'Checkmarx is currently unstable:'  
+                        echo 'Checkmarx is currently unstable:'  
 			//+ e.toString()
                         //catchError(stageResult: 'UNSTABLE', buildResult: currentBuild.currentResult) {
                        // error 'Checkmarx is unstable'
                        // }
-                        //currentBuild.result = 'SUCCESS'
-		//}
+                       currentBuild.result = 'UNSTABLE'
+		}
 	}
 	    stage("After pipeline") {
             echo 'hello'
