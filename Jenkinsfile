@@ -1,16 +1,20 @@
-node {
-	stage ('Git SCM') {
+pipeline {
+	
+	environment {
+    	PATH = "/hot/new/bin:${env.PATH}"
+  	}
+	stages {
+		
+		Stage ('Git SCM') {
 
 		git 'https://github.com/Kapombo/WebGoat-Legacy.git'
 
-	}
-	stage ('Show PATH') {
-			 environment {
-    PATH = "/hot/new/bin:${env.PATH}"
-  }
+		}
+		stage ('Show PATH') {
+			 
 		echo "PATH is: ${env.PATH}"
-	}
-	stage ('CX Scan') {
+		}
+		stage ('CX Scan') {
 		try {
 			step([$class: 'CxScanBuilder', avoidDuplicateProjectScans: true, comment: '', credentialsId: 'ced6538b-2a32-4e80-9f82-28e8ee491bd5', excludeFolders: 'node_modules,test,target,build', exclusionsSetting: 'job', failBuildOnNewResults: false, failBuildOnNewSeverity: 'HIGH', filterPattern: '''!**/_cvs/**/*, !**/.svn/**/*,   !**/.hg/**/*,   !**/.git/**/*,  !**/.bzr/**/*, !**/bin/**/*,
 !**/obj/**/*,  !**/backup/**/*, !**/.idea/**/*, !**/*.DS_Store, !**/*.ipr,     !**/*.iws,
@@ -32,9 +36,10 @@ node {
                        // error 'Checkmarx is unstable'
                        // }
                        currentBuild.result = 'UNSTABLE'
+			}
 		}
-	}
 	    stage("After pipeline") {
             echo 'hello'
-        }
-}// node
+       	    }
+	}
+}
