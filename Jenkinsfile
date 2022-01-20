@@ -1,9 +1,8 @@
 pipeline {
-	agent none
+	agent any
 	environment {
     	PATH = "/hot/new/bin:${env.PATH}"
   	}
-	node {
 	stages {		
 		stage ('Git SCM') {
 			steps {
@@ -50,5 +49,4 @@ pipeline {
 		    }
        	    }
 	} //stages
-	} //node
 }//pipeline
