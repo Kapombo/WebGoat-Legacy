@@ -51,4 +51,4 @@ pipeline {
        	    }
 	} //stages
 	} //node
-}
+}//pipeline
