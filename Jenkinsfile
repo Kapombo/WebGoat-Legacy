@@ -1,13 +1,13 @@
 node {
-	 environment {
-    PATH = "/usr/lib/jvm/java-1.8.0-openkdj-amd64:${env.PATH}"
-  }
 	stage ('Git SCM') {
 
 		git 'https://github.com/Kapombo/WebGoat-Legacy.git'
 
 	}
 	stage ('Show PATH') {
+			 environment {
+    PATH = "/usr/lib/jvm/java-1.8.0-openkdj-amd64:${env.PATH}"
+  }
 		echo "PATH is: ${env.PATH}"
 	}
 	stage ('CX Scan') {
