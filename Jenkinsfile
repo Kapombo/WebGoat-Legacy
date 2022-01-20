@@ -20,6 +20,7 @@ pipeline {
 		}
 		stage ('CX Scan') {
 			steps{
+				step {
 				try {
 			step([$class: 'CxScanBuilder', avoidDuplicateProjectScans: true, comment: '', credentialsId: 'ced6538b-2a32-4e80-9f82-28e8ee491bd5', excludeFolders: 'node_modules,test,target,build', exclusionsSetting: 'job', failBuildOnNewResults: false, failBuildOnNewSeverity: 'HIGH', filterPattern: '''!**/_cvs/**/*, !**/.svn/**/*,   !**/.hg/**/*,   !**/.git/**/*,  !**/.bzr/**/*, !**/bin/**/*,
 !**/obj/**/*,  !**/backup/**/*, !**/.idea/**/*, !**/*.DS_Store, !**/*.ipr,     !**/*.iws,
@@ -41,7 +42,8 @@ pipeline {
                        // error 'Checkmarx is unstable'
                        // }
                        currentBuild.result = 'UNSTABLE'
-			}
+					}
+				}
 			}
 		}
 	    stage("After pipeline") {
