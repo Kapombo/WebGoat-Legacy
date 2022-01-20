@@ -42,6 +42,7 @@ pipeline {
                        // }
                        currentBuild.result = 'UNSTABLE'
 			}
+			}
 		}
 	    stage("After pipeline") {
 		    steps{
