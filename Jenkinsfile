@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	environment {
-    	PATH = "/hot/new/bin:${env.PATH}"
+    	PATH = "/usr/lib/jvm/java-1.8.0-openkdj-amd64:${env.PATH}"
   	}
 	stages {		
 		stage ('Git SCM') {
