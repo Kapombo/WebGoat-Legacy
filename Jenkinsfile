@@ -3,6 +3,7 @@ pipeline {
 	environment {
     	PATH = "/hot/new/bin:${env.PATH}"
   	}
+	node {
 	stages {		
 		stage ('Git SCM') {
 			steps {
@@ -48,5 +49,6 @@ pipeline {
             		echo 'hello'
 		    }
        	    }
-	}
+	} //stages
+	} //node
 }
