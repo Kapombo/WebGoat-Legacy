@@ -6,7 +6,7 @@ node {
 	}
 	stage ('Show PATH') {
 			 environment {
-    PATH = "/usr/lib/jvm/java-1.8.0-openkdj-amd64:${env.PATH}"
+    PATH = "/hot/new/bin:${env.PATH}"
   }
 		echo "PATH is: ${env.PATH}"
 	}
