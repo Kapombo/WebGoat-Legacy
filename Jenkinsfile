@@ -7,7 +7,7 @@ pipeline {
   	}
 	stages {
 		
-		Stage ('Git SCM') {
+		stage ('Git SCM') {
 			steps {
 			git 'https://github.com/Kapombo/WebGoat-Legacy.git'
 			}
